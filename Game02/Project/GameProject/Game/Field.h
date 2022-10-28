@@ -3,8 +3,7 @@
 
 class Field : public Base {
 private:
-	CImage m_foreground;
-	CImage m_DOUKUTSU;
+	CImage m_space;
 	float m_ground_y;
 public:
 	Field();
