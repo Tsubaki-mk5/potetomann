@@ -75,7 +75,7 @@ void Init(void)
 	Base::Add(new Enemy(CVector2D(500, 200)));
 	Base::Add(new UI());
 
-	ADD_RESOURCE("Space", CImage::CreateImage("Image/‰F’ˆ.png"));
+	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
 
 
 	Base::Add(new Field());
