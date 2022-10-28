@@ -1,7 +1,7 @@
 //ゲーム係機能のインクルード
 #include <GLLibrary.h>
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
+#define SCREEN_WIDTH 720
+#define SCREEN_HEIGHT 960
 #include "Game/Player.h"
 #include "Game/Enemy.h"
 #include "Game/Bullet.h"
@@ -68,7 +68,7 @@ void Init(void)
 	//初期化の命令を書く
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
-	Base::Add(new Player(CVector2D(200, 500)));
+	Base::Add(new Player(CVector2D(200, 800)));
 	Base::Add(new Enemy(CVector2D(200, 200)));
 	Base::Add(new Enemy(CVector2D(300, 200)));
 	Base::Add(new Enemy(CVector2D(400, 200)));

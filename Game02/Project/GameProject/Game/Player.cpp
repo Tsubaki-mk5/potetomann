@@ -13,6 +13,10 @@ void Player::Update()
 	const int move_speed = 5;
 	if(HOLD(CInput::eRight))
 		m_pos.x += move_speed;
+	if (HOLD(CInput::eUp))
+		m_pos.y  -= move_speed;
+	if (HOLD(CInput::eDown))
+		m_pos.y += move_speed;
 	if (HOLD(CInput::eLeft))
 		m_pos.x -= move_speed;
 	if (PUSH(CInput::eButton1)) {
