@@ -11,7 +11,8 @@ enum {
 	eType_Enemy_Attack,
 	eType_Effect,
 	eType_UI,
-	
+	eType_Gimmick,
+	eType_Boss,
 };
 class Base {
 public:
