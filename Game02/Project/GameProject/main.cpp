@@ -8,6 +8,7 @@
 #include <list>
 #include "game/UI.h"
 #include "Game/Field.h"
+#include "Game/Gimmick.h"
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
 //--------------------------------------------
@@ -74,9 +75,9 @@ void Init(void)
 	Base::Add(new Enemy(CVector2D(400, 200)));
 	Base::Add(new Enemy(CVector2D(500, 200)));
 	Base::Add(new UI());
-
+	Base::Add(new Gimmick(CVector2D(400, 200)));
 	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
-
+	
 
 	Base::Add(new Field());
 }
