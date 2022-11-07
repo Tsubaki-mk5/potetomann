@@ -1,5 +1,5 @@
 #include "Enemy.h"
-
+#include "Effect.h"
 Enemy::Enemy(const CVector2D& pos):Base(eType_Enemy)
 {
 	m_img.Load("Image/Enemy.png");
@@ -26,4 +26,19 @@ void Enemy::Draw()
 {
 	m_img.SetPos(m_pos);
 	m_img.Draw();
+}
+
+void Enemy::Collision(Base*b)
+{
+	switch (b->m_type) {
+	case eType_Player:
+		if (Base::CollisionCircle(this, b))
+		{
+			b->SetKill();
+			SetKill();
+			Base::Add(new Effect(b->m_pos));
+	
+		}
+		break;
+	}
 }
