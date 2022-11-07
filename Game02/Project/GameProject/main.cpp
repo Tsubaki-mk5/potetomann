@@ -9,6 +9,7 @@
 #include "game/UI.h"
 #include "Game/Field.h"
 #include "Game/Gimmick.h"
+#include "Game/Boss.h"
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
 //--------------------------------------------
@@ -76,8 +77,10 @@ void Init(void)
 	Base::Add(new Enemy(CVector2D(500, 200)));
 	Base::Add(new UI());
 	Base::Add(new Gimmick(CVector2D(400, 200)));
+	Base::Add(new Boss(CVector2D(500, 500),true));
+
 	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
-	
+	ADD_RESOURCE("Boss", CImage::CreateImage("Image/boss.png"));
 
 	Base::Add(new Field());
 }
