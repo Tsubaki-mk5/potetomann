@@ -80,7 +80,7 @@ void Init(void)
 	Base::Add(new Boss(CVector2D(500, 500),true));
 
 	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
-	ADD_RESOURCE("Boss", CImage::CreateImage("Image/boss.png"));
+	ADD_RESOURCE("Boss", CImage::CreateImage("Image/Boss.png"));
 
 	Base::Add(new Field());
 }
