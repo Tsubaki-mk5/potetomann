@@ -4,9 +4,10 @@ Player::Player(const CVector2D& pos) : Base(eType_Player)
 {
 	m_img.Load("Image/Player.png");
 	m_pos = pos;
-	m_rad = 12;
+	//m_rad = 12;
 	m_img.SetSize(32, 32);
 	m_img.SetCenter(16, 16);
+	m_count = 0;
 }
 void Player::Update()
 {
@@ -31,4 +32,5 @@ void Player::Draw()
 {
 	m_img.SetPos(m_pos);
 	m_img.Draw();
+	DrawRect();
 }
