@@ -77,11 +77,7 @@ void Init(void)
 	Base::Add(new Enemy(CVector2D(500, 200)));
 	Base::Add(new UI());
 	Base::Add(new Gimmick(CVector2D(400, 200)));
-	Base::Add(new Boss(CVector2D(500, 500),true));
-
 	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
-	ADD_RESOURCE("Boss", CImage::CreateImage("Image/Boss.png"));
-
 	Base::Add(new Field());
 }
 
