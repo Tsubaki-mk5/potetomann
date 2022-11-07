@@ -75,7 +75,7 @@ void Init(void)
 	Base::Add(new Enemy(CVector2D(400, 200)));
 	Base::Add(new Enemy(CVector2D(500, 200)));
 	Base::Add(new UI());
-	Base::Add(new Gimmick(CVector2D(400, 200)));
+	Base::Add(new Gimmick(CVector2D(100, 300)));
 	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
 	
 
