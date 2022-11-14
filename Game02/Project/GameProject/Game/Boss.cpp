@@ -2,7 +2,7 @@
 
 Boss::Boss(const CVector2D& pos) : Base(eType_Boss)
 {
-	m_img.Load("Image/sentouki.png");
+	m_img.Load("Image/Boss.png");
 	m_pos = pos;
 	m_rad = 12;
 	m_img.SetSize(120, 120);
