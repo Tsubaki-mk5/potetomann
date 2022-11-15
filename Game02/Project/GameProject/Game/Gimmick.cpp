@@ -5,14 +5,19 @@
 #define GRAVITY	(1.0f/70)
 
 Gimmick::Gimmick(const CVector2D& pos) : Base(eType_Gimmick) {
+	
+		
+	
 	m_pos = pos;
 	m_img0.Load("Image/Inseki.png");
 	m_img0.SetSize(350, 500);
-	m_img0.SetCenter(125,125);
-	m_rad = 58;
-	m_img1.Load("Image/Akikann.png");
+	m_img0.SetCenter(125, 125);
+	m_rad = 56;
+	m_img1.Load("Image/Akikann.png"); 
 	m_img1.SetSize(200, 200);
-	m_img1.SetCenter(50, 50);
+	m_img1.SetCenter(60, 60);
+		
+	
 	
 }
 
