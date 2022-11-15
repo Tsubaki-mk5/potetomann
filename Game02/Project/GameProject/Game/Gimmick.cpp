@@ -6,23 +6,30 @@
 
 Gimmick::Gimmick(const CVector2D& pos) : Base(eType_Gimmick) {
 	m_pos = pos;
-	m_img.Load("Image/Inseki.png");
-	m_img.SetSize(350, 500);
-	m_img.SetCenter(40,40);
-	m_rad =60;
-
+	m_img0.Load("Image/Inseki.png");
+	m_img0.SetSize(350, 500);
+	m_img0.SetCenter(125,125);
+	m_rad = 58;
+	m_img1.Load("Image/Akikann.png");
+	m_img1.SetSize(200, 200);
+	m_img1.SetCenter(50, 50);
+	
 }
 
 void Gimmick::Update()
 {
 	m_vec.y += GRAVITY;
 	m_pos += m_vec;
+	
 }
 
 void Gimmick::Draw()
 {
-	m_img.SetPos(m_pos);
-	m_img.Draw();
+	m_img0.SetPos(m_pos);
+	m_img0.Draw();
+	m_img1.SetPos(m_pos);
+	m_img1.Draw();
+	
 }
 
 void Gimmick::Collision(Base* b)

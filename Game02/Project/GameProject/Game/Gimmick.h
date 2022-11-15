@@ -4,7 +4,8 @@
 class Gimmick : public Base {
 public:
 
-	CImage m_img;
+	CImage m_img0;
+	CImage m_img1;
 	Gimmick();
 
 public:
