@@ -79,7 +79,7 @@ void Init(void)
 	Base::Add(new UI());
 	Base::Add(new Gimmick(CVector2D(100, 300)));
 	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
-	ADD_RESOURCE("Akikann", CImage::CreateImage("Image/Akikann.png"));
+	ADD_RESOURCE("Gimmick", CImage::CreateImage("Image/Akikann.png"));
 	Base::Add(new Field());
 }
 
