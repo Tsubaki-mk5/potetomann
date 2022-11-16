@@ -33,9 +33,9 @@ void Title::Update() {
 	if (PUSH(CInput::eButton4)) {
 		SetKill();
 	}
-	if (PUSH(CInput::eButton5)) {
+	/*if (PUSH(CInput::eButton5)) {
 		SetKill();
-	}
+	}*/
 }
 
 void Title::Draw() {
