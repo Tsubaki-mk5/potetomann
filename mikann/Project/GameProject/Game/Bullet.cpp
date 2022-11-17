@@ -36,5 +36,7 @@ void Bullet::Collision(Base* b)
 			GameData::s_score += 100;
 		}
 		break;
+
+	
 	}
 }
