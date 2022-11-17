@@ -83,6 +83,7 @@ void Init(void)
 	ADD_RESOURCE("Akikann", CImage::CreateImage("Image/Akikann.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));
+	ADD_RESOURCE("Gameover", CImage::CreateImage("Image/Gameover.png"));
 	Base::Add(new Field());
 	Base::Add(new Title());
 }

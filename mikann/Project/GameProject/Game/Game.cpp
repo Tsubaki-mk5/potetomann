@@ -8,6 +8,7 @@
 #include "GameData.h"
 #include "Gameclear.h"
 #include "Boss.h"
+#include "Gameover.h"
 Game::Game() :Base(eType_Scene) {
 	Base::Add(new Field());
 	Base::Add(new Player(CVector2D(200, 800)));
@@ -22,11 +23,20 @@ Game::Game() :Base(eType_Scene) {
 }
 
 Game::~Game() {
-	//全てのオブジェクトを破棄
-	Base::KillAll();
-	//タイトルシーンへ
-	Base::Add(new Gameclear());
-
+	switch (k) {
+	case 0:
+		//全てのオブジェクトを破棄
+		Base::KillAll();
+		Base::Add(new Gameclear());
+		
+		break;
+	case 1:
+		//全てのオブジェクトを破棄
+		Base::KillAll();
+		Base::Add(new Gameover());
+		
+		break;
+	}
 }
 
 
@@ -34,11 +44,14 @@ void Game::Update() {
 	//プレイヤー死亡　ボタン１でゲームシーン終了
 	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
 		SetKill();
+		k = 1;
 	}
 
 	//敵全滅　ボタン１でゲームシーン終了
 	if (!Base::FindObject(eType_Enemy) && PUSH(CInput::eButton1)) {
 		SetKill();
+		
+		
 	}
 }
 
