@@ -10,7 +10,7 @@ Boss::Boss(const CVector2D& pos) : Base(eType_Boss)
 	m_img.SetCenter(110,110 );
 	//m_rect = CRect(20, 175, 170, 10);
 	movedir = -1;
-	m_hp = 200;
+	m_hp = 500;
 }
 void Boss::Update()
 {
