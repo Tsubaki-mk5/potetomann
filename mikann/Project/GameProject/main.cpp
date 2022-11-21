@@ -71,15 +71,20 @@ void Init(void)
 	//‰Šú‰»‚Ì–½—ß‚ğ‘‚­
 	//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ŒÄ‚Î‚ê‚é
 	//-----------------------------------------------------
-
-	srand(time(NULL));
+	Base::Add(new Player(CVector2D(200, 800)));
+	Base::Add(new Enemy(CVector2D(200, 200)));
+	Base::Add(new Enemy(CVector2D(300, 200)));
+	Base::Add(new Enemy(CVector2D(400, 200)));
+	Base::Add(new Enemy(CVector2D(500, 200)));
+	Base::Add(new Boss(CVector2D(400, 200)));
+	Base::Add(new UI());
+	Base::Add(new Gimmick(CVector2D(100, 300)));
 	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
 	ADD_RESOURCE("Akikann", CImage::CreateImage("Image/Akikann.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));
 	ADD_RESOURCE("Gameover", CImage::CreateImage("Image/Gameover.png"));
-	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
-	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet2.png"));
+	Base::Add(new Field());
 	Base::Add(new Title());
 }
 

@@ -4,11 +4,10 @@ class Enemy: public Base {
 public:
 	CImage m_img;
 	int m_cnt;
-	int m_hp;
+
 public:
 	Enemy(const CVector2D& pos);
 	void Update();
 	void Draw();
 	void Collision(Base* b);
-
 };

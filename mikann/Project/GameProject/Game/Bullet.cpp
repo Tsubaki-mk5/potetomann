@@ -3,16 +3,9 @@
 #include "GameData.h"
 
 
-Bullet::Bullet(int type,const CVector2D& pos,float ang, float speed):Base(eType_Bullet)
+Bullet::Bullet(const CVector2D& pos):Base(eType_Bullet)
 {
-<<<<<<< HEAD
 	m_img.Load("Image/Bullet3.png");
-=======
-	if (type == eType_Player_Bullet)
-		m_img = COPY_RESOURCE("Bullet", CImage);
-	else
-		m_img = COPY_RESOURCE("Bullet2", CImage);
->>>>>>> 45868fe74127dbc1a26085cb6ab3e4311f8248e1
 	m_pos = pos;
 	m_rad = 16;
 	m_img.SetSize(82, 50);
@@ -21,8 +14,8 @@ Bullet::Bullet(int type,const CVector2D& pos,float ang, float speed):Base(eType_
 
 void Bullet::Update()
 {
-	m_vec = CVector2D(sin(m_ang), cos(m_ang)) * m_speed;
-	m_pos += m_vec;
+	const int move_speed = 4;
+	m_pos.y -= move_speed;
 }
 
 void Bullet::Draw()
@@ -31,20 +24,17 @@ void Bullet::Draw()
 	m_img.Draw();
 
 }
-void Bullet::Collision(Base* b) {
+void Bullet::Collision(Base* b)
+{
 	switch (b->m_type) {
-	case eType_Player:
-		if (m_type == eType_Enemy_Bullet && Base::CollisionCircle(this, b)) {
-			SetKill();
-			b->SetKill();
-		}
-		break;
 	case eType_Enemy:
-		if (m_type == eType_Player_Bullet && Base::CollisionCircle(this, b)) {
-			SetKill();
+		if (Base::CollisionCircle(this, b))
+		{
 			b->SetKill();
+			SetKill();
+			Base::Add(new Effect(b->m_pos));
+			GameData::s_score += 100;
 		}
 		break;
 	}
-
 }

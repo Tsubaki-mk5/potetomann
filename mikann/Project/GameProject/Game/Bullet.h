@@ -3,9 +3,8 @@
 class Bullet : public Base {
 public:
 	CImage m_img;
-	float m_speed;
 public:
-	Bullet(int type,const CVector2D& pos, float ang, float speed );
+	Bullet(const CVector2D& pos);
 	void Update();
 	void Draw();
 	void Collision(Base* b);
