@@ -48,7 +48,7 @@ void Game::Update() {
 	}
 
 	//敵全滅　ボタン１でゲームシーン終了
-	if (!Base::FindObject(eType_Enemy) && PUSH(CInput::eButton1)) {
+	if (!Base::FindObject(eType_Enemy) && !Base::FindObject(eType_Boss)&&PUSH(CInput::eButton1)) {
 		SetKill();
 		
 		

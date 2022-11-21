@@ -14,13 +14,13 @@ void Boss::Update()
 {
 	if (movedir == 1) {
 		m_pos.x += 4;
-		if (m_pos.x > 550) {
+		if (m_pos.x > 650) {
 			movedir = -1;
 		}
 	}
 	else {
 		m_pos.x -= 4;
-		if (m_pos.x < 0) {
+		if (m_pos.x < 50) {
 			movedir = 1;
 		}
 	}
