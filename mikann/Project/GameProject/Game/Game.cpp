@@ -18,7 +18,7 @@ Game::Game() :Base(eType_Scene) {
 	Base::Add(new Enemy(CVector2D(500, 200)));
 	Base::Add(new Boss(CVector2D(400, 200)));
 	Base::Add(new UI());
-	Base::Add(new Gimmick(CVector2D(100, 300)));
+	Base::Add(new Gimmick(CVector2D(rand() % 720, 0)));
 
 }
 
@@ -48,7 +48,7 @@ void Game::Update() {
 	}
 
 	//敵全滅　ボタン１でゲームシーン終了
-	if (!Base::FindObject(eType_Enemy) && PUSH(CInput::eButton1)) {
+	if (!Base::FindObject(eType_Enemy) && !Base::FindObject(eType_Boss)&&PUSH(CInput::eButton1)) {
 		SetKill();
 		
 		
