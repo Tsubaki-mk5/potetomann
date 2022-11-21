@@ -13,7 +13,8 @@ enum {
 	eType_Enemy_Bullet, 
 	eType_Effect,
 	eType_Gimmick,
-	eType_Scene
+	eType_Scene,
+	eType_Player_Bullet,
 };
 //èdóÕâ¡ë¨ìx
 #define GRAVITY	(9.8f/20)
