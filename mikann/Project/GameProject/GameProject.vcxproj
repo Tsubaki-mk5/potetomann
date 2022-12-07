@@ -22,6 +22,7 @@
     <ClCompile Include="Game\Gameclear.cpp" />
     <ClCompile Include="Game\GameData.cpp" />
     <ClCompile Include="Game\Gameover.cpp" />
+    <ClCompile Include="Game\Gauge.cpp" />
     <ClCompile Include="Game\Gimmick.cpp" />
     <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="Game\UI.cpp" />
@@ -40,6 +41,7 @@
     <ClInclude Include="Game\Gameclear.h" />
     <ClInclude Include="Game\GameData.h" />
     <ClInclude Include="Game\Gameover.h" />
+    <ClInclude Include="Game\Gauge.h" />
     <ClInclude Include="Game\Gimmick.h" />
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\UI.h" />
