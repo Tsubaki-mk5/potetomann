@@ -2,12 +2,12 @@
 #include "Effect.h"
 Enemy::Enemy(const CVector2D& pos):Base(eType_Enemy)
 {
-	m_img.Load("Image/tako.png");
+	m_img.Load("Image/Enemy.png");
 	m_pos = pos;
 	m_cnt = 0;
-	m_rad = 25;
-	m_img.SetSize(1000, 1000);
-	m_img.SetCenter(500, 500);
+	m_rad = 12;
+	m_img.SetSize(32, 32);
+	m_img.SetCenter(16, 16);
 
 }
 

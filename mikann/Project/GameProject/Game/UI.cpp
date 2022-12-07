@@ -16,8 +16,14 @@ void UI::Draw()
 		m_img.Draw();
 		Base* enemy = Base::FindObject(eType_Enemy);
 
-		
-		
+		/*Z敵がいなければ
+		if (enemy == nullptr) {
+			//ゲームクリアの表示
+			m_img.SetRect(0, 64, 0 + 160, 64 + 32);
+			m_img.SetSize(160, 32);
+			m_img.SetPos(100, 200);
+			m_img.Draw();
+		}*/
 
 	}
 }

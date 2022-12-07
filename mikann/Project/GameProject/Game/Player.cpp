@@ -12,14 +12,17 @@ Player::Player(const CVector2D& pos) : Base(eType_Player)
 void Player::Update()
 {
 	const int move_speed = 5;
-	if(HOLD(CInput::eRight))
+	if (HOLD(CInput::eRight))
 		m_pos.x += move_speed;
 	if (HOLD(CInput::eUp))
-		m_pos.y  -= move_speed;
+		m_pos.y -= move_speed;
 	if (HOLD(CInput::eDown))
 		m_pos.y += move_speed;
 	if (HOLD(CInput::eLeft))
 		m_pos.x -= move_speed;
+	/*if (HOLD(CInput::eButton4))
+		m_ang = 8;
+		*/
 	if (PUSH(CInput::eButton1)) {
 		
 		Base::Add(new Bullet(CVector2D(m_pos)));
@@ -31,6 +34,7 @@ void Player::Update()
 void Player::Draw()
 {
 	m_img.SetPos(m_pos);
+	//m_img.SetAng(m_ang);
 	m_img.Draw();
 	DrawRect();
 }
