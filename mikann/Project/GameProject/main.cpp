@@ -11,6 +11,7 @@
 #include "Game/Gimmick.h"
 #include "Game/Boss.h"
 #include "Title/Title.h"
+#include "Game/Bossbullet.h"
 //--------------------------------------------
 //ÉOÉçÅ[ÉoÉãïœêîóÃàÊ
 //--------------------------------------------
@@ -76,6 +77,7 @@ void Init(void)
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));
 	ADD_RESOURCE("Gameover", CImage::CreateImage("Image/Gameover.png"));
+	ADD_RESOURCE("Bossbullet", CImage::CreateImage("Image/Bossbullet.png"));
 	Base::Add(new Field());
 	Base::Add(new Title());
 }
