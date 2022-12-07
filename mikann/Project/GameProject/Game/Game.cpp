@@ -18,6 +18,9 @@ Game::Game() :Base(eType_Scene) {
 	Base::Add(new Enemy(CVector2D(500, 200)));
 	Base::Add(new Boss(CVector2D(400, 200)));
 	Base::Add(new UI());
+	rand() % 720;
+	time(NULL);
+	srand(720 % 300);
 	Base::Add(new Gimmick(CVector2D(100, 300)));
 
 }
