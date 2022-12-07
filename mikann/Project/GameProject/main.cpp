@@ -11,6 +11,7 @@
 #include "Game/Gimmick.h"
 #include "Game/Boss.h"
 #include "Title/Title.h"
+#include "Game/Bossbullet.h"
 //--------------------------------------------
 //グローバル変数領域
 //--------------------------------------------
@@ -71,19 +72,12 @@ void Init(void)
 	//初期化の命令を書く
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
-	Base::Add(new Player(CVector2D(200, 800)));
-	Base::Add(new Enemy(CVector2D(200, 200)));
-	Base::Add(new Enemy(CVector2D(300, 200)));
-	Base::Add(new Enemy(CVector2D(400, 200)));
-	Base::Add(new Enemy(CVector2D(500, 200)));
-	Base::Add(new Boss(CVector2D(400, 200)));
-	Base::Add(new UI());
-	Base::Add(new Gimmick(CVector2D(100, 300)));
 	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
 	ADD_RESOURCE("Akikann", CImage::CreateImage("Image/Akikann.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));
 	ADD_RESOURCE("Gameover", CImage::CreateImage("Image/Gameover.png"));
+	ADD_RESOURCE("Bossbullet", CImage::CreateImage("Image/Bossbullet.png"));
 	Base::Add(new Field());
 	Base::Add(new Title());
 }

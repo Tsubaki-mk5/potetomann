@@ -8,6 +8,7 @@ enum {
 	eType_Enemy,
 	eType_Player,
 	eType_Enemy_Attack,
+	eType_Boss_bullet,
 	eType_Bullet,
 	eType_Sword,
 	eType_Enemy_Bullet, 
@@ -25,6 +26,7 @@ public:
 	CVector2D m_vec;
 	float m_rad;
 	float m_ang;
+	int m_hit_id;
 	static std::list<Base*> m_list;
 	bool m_kill;
 	static CVector2D m_scroll;

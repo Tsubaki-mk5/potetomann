@@ -1,5 +1,6 @@
 #include "Boss.h"
 #include "Effect.h"
+#include "Bossbullet.h"
 Boss::Boss(const CVector2D& pos) : Base(eType_Boss)
 {
 	m_img.Load("Image/sentouki.png");
@@ -12,15 +13,25 @@ Boss::Boss(const CVector2D& pos) : Base(eType_Boss)
 }
 void Boss::Update()
 {
+	m_cnt++;
+	Base* b = Base::FindObject(eType_Player);
+	if (b) {
+		CVector2D vec = b->m_pos - m_pos;
+		m_ang = atan2(vec.x, vec.y);
+		if (m_cnt >= 50) {
+			Base::Add(new Bossbullet(eType_Boss_bullet, m_pos, m_ang, 4));
+			m_cnt = 0;
+		}
+	}
 	if (movedir == 1) {
 		m_pos.x += 4;
-		if (m_pos.x > 550) {
+		if (m_pos.x > 650) {
 			movedir = -1;
 		}
 	}
 	else {
 		m_pos.x -= 4;
-		if (m_pos.x < 0) {
+		if (m_pos.x < 50) {
 			movedir = 1;
 		}
 	}
@@ -31,6 +42,7 @@ void Boss::Update()
 void Boss::Draw()
 {
 	m_img.SetPos(m_pos);
+	m_img.SetAng(m_ang);
 	m_img.Draw();
 }
 
