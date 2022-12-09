@@ -15,7 +15,7 @@ Bullet::Bullet(const CVector2D& pos):Base(eType_Bullet)
 
 void Bullet::Update()
 {
-	const int move_speed = 4;
+	const int move_speed = 7;
 	m_pos.y -= move_speed;
 }
 

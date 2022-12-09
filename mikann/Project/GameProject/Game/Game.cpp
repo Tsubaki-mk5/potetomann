@@ -22,7 +22,7 @@ Game::Game() :Base(eType_Scene) {
 	
 	srand(time(NULL));
 	Base::Add(new Gimmick(CVector2D(rand() % 720, 300)));
-
+	
 }
 
 Game::~Game() {

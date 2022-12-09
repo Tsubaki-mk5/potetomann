@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Bullet.h"
+#include"Gauge.h"
 #include"Effect.h"
 #include"Hittsatu.h"
 
@@ -11,6 +12,12 @@ Player::Player(const CVector2D& pos) : Base(eType_Player)
 	m_img.SetSize(32, 32);
 	m_img.SetCenter(16, 16);
 	m_count = 0;
+	Base::Add(m_gauge = new Gauge(0));
+	m_hp = m_max_hp = 1000;
+}
+Player::~Player(){
+	if (m_gauge)
+		m_gauge->SetKill();
 	kaiten = false;
 	movedir = -1;
 	m_hp = 100;
@@ -37,35 +44,47 @@ void Player::Update()
 	}
 		
 	if (PUSH(CInput::eButton1)) {
-		
+
 		Base::Add(new Bullet(CVector2D(m_pos)));
+		m_scroll.y = m_pos.y - 600;
 	}
+<<<<<<< HEAD
 
 	if (PUSH(CInput::eButton5)) {
 
 		Base::Add(new Hittsatu(CVector2D(m_pos)));
 	}
+=======
+	m_gauge->SetValue((float)m_hp / m_max_hp);
+	m_gauge->m_pos = CVector2D(0, 0);
+>>>>>>> 2cc88dc0914264da1ff6637a7e9681414f167373
 
 }
 void Player::Collision(Base* b)
 {
 	switch (b->m_type) {
 	case eType_Enemy:
+	case eType_Boss_bullet:
 	{
+			if (Base::CollisionCircle(this, b))
+			{
+				b->SetKill();
+				m_hp -= 20;
+				if (m_hp <= 0) {
+					SetKill();
+				}
+				Base::Add(new Effect(b->m_pos));
+
+			}
+		}
 		CVector2D v = b->m_pos - m_pos;
 		float l = v.Length();
 			if (kaiten && l < b->m_rad + 64)
-
-		
 		{
 			b->SetKill();
-
 			Base::Add(new Effect(b->m_pos));
-
-
 		}
-	}
-
+	
 		break;
 	}
 }

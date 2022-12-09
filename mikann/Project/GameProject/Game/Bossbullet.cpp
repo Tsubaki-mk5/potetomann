@@ -32,7 +32,7 @@ void Bossbullet::Collision(Base* b)
 	//case eType_Player:
 		if (m_type == eType_Boss_bullet && Base::CollisionCircle(this, b)) {
 			SetKill();
-			b->SetKill();
+			
 		}
 	}
 }
