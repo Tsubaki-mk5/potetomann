@@ -8,7 +8,6 @@ public:
 	bool kaiten;
 	int m_count;
 	int movedir;
-	int m_hp;
 	int m_max_hp;
 	Gauge* m_gauge;
 public:
