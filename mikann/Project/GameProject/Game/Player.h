@@ -4,6 +4,7 @@ class Gauge;
 class Player : public Base {
 public:
 	CImage m_img;
+	bool kaiten;
 	int m_count;
 	int m_hp;
 	int m_max_hp;
