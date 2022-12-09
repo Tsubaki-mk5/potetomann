@@ -10,11 +10,12 @@ Bullet::Bullet(const CVector2D& pos):Base(eType_Bullet)
 	m_rad = 16;
 	m_img.SetSize(82, 50);
 	m_img.SetCenter(41,25);
+	m_attack_no = m_attack_no;
 }
 
 void Bullet::Update()
 {
-	const int move_speed = 4;
+	const int move_speed = 7;
 	m_pos.y -= move_speed;
 }
 
@@ -30,8 +31,8 @@ void Bullet::Collision(Base* b)
 	case eType_Enemy:
 		if (Base::CollisionCircle(this, b))
 		{
-			b->SetKill();
-			SetKill();
+			
+			
 			Base::Add(new Effect(b->m_pos));
 			GameData::s_score += 100;
 		}

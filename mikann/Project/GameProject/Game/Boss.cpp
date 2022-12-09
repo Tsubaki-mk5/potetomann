@@ -58,11 +58,23 @@ void Boss::Draw()
 void Boss::Collision(Base* b)
 {
 	switch (b->m_type) {
-	case eType_Bullet:
+	case   eType_Bullet:
 		if (Base::CollisionCircle(this, b))
 		{
 			b->SetKill();
 			m_hp -= 20;
+			if (m_hp <= 0) {
+				SetKill();
+			}
+			Base::Add(new Effect(b->m_pos));
+
+		}
+		break;
+	case   eType_Hittsatu:
+		if (Base::CollisionCircle(this, b))
+		{
+			b->SetKill();
+			m_hp -= 250;
 			if (m_hp <= 0) {
 				SetKill();
 			}
