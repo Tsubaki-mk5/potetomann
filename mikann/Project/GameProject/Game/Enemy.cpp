@@ -4,18 +4,15 @@ Enemy::Enemy(const CVector2D& pos):Base(eType_Enemy)
 {
 	m_img.Load("Image/tako.png");
 	m_pos = pos;
-<<<<<<< HEAD
 	m_rad = 12;
 	m_img.SetSize(32, 32);
 	m_img.SetCenter(16, 16);
 	movedir = -1;
 	m_hp = 40;
-=======
 	m_cnt = 0;
 	m_rad = 25;
 	m_img.SetSize(1000, 1000);
 	m_img.SetCenter(500, 500);
->>>>>>> 2cc88dc0914264da1ff6637a7e9681414f167373
 
 }
 

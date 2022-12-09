@@ -49,7 +49,6 @@ void Player::Update()
 		m_scroll.y = m_pos.y - 600;
 	}
 
-
 	if (PUSH(CInput::eButton5)) {
 
 		Base::Add(new Hittsatu(CVector2D(m_pos)));
