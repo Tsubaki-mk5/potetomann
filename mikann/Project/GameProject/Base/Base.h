@@ -10,11 +10,13 @@ enum {
 	eType_Enemy_Attack,
 	eType_Boss_bullet,
 	eType_Bullet,
+	eType_Hittsatu,
 	eType_Sword,
 	eType_Enemy_Bullet, 
 	eType_Effect,
 	eType_Gimmick,
-	eType_Scene
+	eType_Bossbullet,
+	eType_Scene,
 };
 //èdóÕâ¡ë¨ìx
 #define GRAVITY	(9.8f/20)

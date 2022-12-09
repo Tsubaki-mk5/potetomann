@@ -5,6 +5,7 @@
 #include "Game/Player.h"
 #include "Game/Enemy.h"
 #include "Game/Bullet.h"
+#include "Game/Hittsatu.h"
 #include <list>
 #include "game/UI.h"
 #include "Game/Field.h"

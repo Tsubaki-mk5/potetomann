@@ -2,7 +2,7 @@
 #include "../Game/Game.h"
 
 
-Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 128), m_menu_text("C:\\Windows\\Fonts\\msgothic.ttc", 50), m_member_text("C:\\Windows\\Fonts\\msgothic.ttc", 40) {
+Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 50), m_menu_text("C:\\Windows\\Fonts\\msgothic.ttc", 50), m_member_text("C:\\Windows\\Fonts\\msgothic.ttc", 40) {
 	m_img = COPY_RESOURCE("Title", CImage);
 	//SOUND("titleBGM")->Play(true);
 }
@@ -42,5 +42,5 @@ void Title::Draw() {
 
 	m_img.Draw();
 
-	m_title_text.Draw(156, 200, 255, 255, 0, "‚±‚Ô‚µ");
+	m_title_text.Draw(100, 200, 255, 255, 0, "Universeinvestigation");
 }

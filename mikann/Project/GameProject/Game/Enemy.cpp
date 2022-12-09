@@ -4,10 +4,11 @@ Enemy::Enemy(const CVector2D& pos):Base(eType_Enemy)
 {
 	m_img.Load("Image/Enemy.png");
 	m_pos = pos;
-	m_cnt = 0;
 	m_rad = 12;
 	m_img.SetSize(32, 32);
 	m_img.SetCenter(16, 16);
+	movedir = -1;
+	m_hp = 40;
 
 }
 
@@ -25,19 +26,23 @@ void Enemy::Update()
 void Enemy::Draw()
 {
 	m_img.SetPos(m_pos);
+	m_img.SetAng(m_ang);
 	m_img.Draw();
 }
 
 void Enemy::Collision(Base*b)
 {
 	switch (b->m_type) {
-	case eType_Player:
+	case   eType_Bullet:
 		if (Base::CollisionCircle(this, b))
 		{
 			b->SetKill();
-			SetKill();
+			m_hp -= 20;
+			if (m_hp <= 0) {
+				SetKill();
+			}
 			Base::Add(new Effect(b->m_pos));
-	
+
 		}
 		break;
 	}

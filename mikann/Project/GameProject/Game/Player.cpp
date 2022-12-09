@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Bullet.h"
 #include"Effect.h"
+#include"Hittsatu.h"
 
 Player::Player(const CVector2D& pos) : Base(eType_Player)
 {
@@ -11,6 +12,8 @@ Player::Player(const CVector2D& pos) : Base(eType_Player)
 	m_img.SetCenter(16, 16);
 	m_count = 0;
 	kaiten = false;
+	movedir = -1;
+	m_hp = 100;
 }
 void Player::Update()
 {
@@ -37,7 +40,11 @@ void Player::Update()
 		
 		Base::Add(new Bullet(CVector2D(m_pos)));
 	}
-	
+
+	if (PUSH(CInput::eButton5)) {
+
+		Base::Add(new Hittsatu(CVector2D(m_pos)));
+	}
 
 }
 void Player::Collision(Base* b)
