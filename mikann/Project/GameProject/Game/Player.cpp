@@ -53,21 +53,27 @@ void Player::Collision(Base* b)
 {
 	switch (b->m_type) {
 	case eType_Enemy:
+	case eType_Boss_bullet:
 	{
+			if (Base::CollisionCircle(this, b))
+			{
+				b->SetKill();
+				m_hp -= 20;
+				if (m_hp <= 0) {
+					SetKill();
+				}
+				Base::Add(new Effect(b->m_pos));
+
+			}
+		}
 		CVector2D v = b->m_pos - m_pos;
 		float l = v.Length();
 			if (kaiten && l < b->m_rad + 64)
-
-		
 		{
 			b->SetKill();
-
 			Base::Add(new Effect(b->m_pos));
-
-
 		}
-	}
-
+	
 		break;
 	}
 }
@@ -79,8 +85,4 @@ void Player::Draw()
 	m_img.SetAng(m_ang);
 	m_img.Draw();
 	DrawRect();
-}
-
-void Player::Collision(Base* b)
-{
 }

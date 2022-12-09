@@ -14,5 +14,5 @@ public:
 	~Player();
 	void Update();
 	void Draw();
-	void Collision(Base* b);
+	void Collision(Base*b);
 };
