@@ -11,7 +11,8 @@ enum {
 	eType_Boss_bullet,
 	eType_Bullet,
 	eType_Sword,
-	eType_Enemy_Bullet, 
+	eType_Enemy_Bullet,
+	eType_BossWaza,
 	eType_Effect,
 	eType_Gimmick,
 	eType_Scene
