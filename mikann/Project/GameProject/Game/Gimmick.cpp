@@ -6,14 +6,20 @@
 
 Gimmick::Gimmick(const CVector2D& pos) : Base(eType_Gimmick) {
 	
-		
 	
 	m_pos = pos;
 	m_img0.Load("Image/Inseki.png");
 	m_img0.SetSize(350, 500);
 	m_img0.SetCenter(100, 170);
 	m_rad = 35;
-	
+	int cnt = 0;
+
+	while (cnt <= 10) {
+		ADD_RESOURCE("Inseki", CImage::CreateImage("Image/Inseki.png"));
+		cnt += 1;
+	}
+	return;
+
 
 	
 	//m_img1.Load("Image/Akikann.png"); 
