@@ -18,7 +18,6 @@ enum {
 	eType_Gimmick,
 	eType_Bossbullet,
 	eType_Scene,
-	eType_Scene,
 	eType_Gauge
 };
 //d—Í‰Á‘¬“x
