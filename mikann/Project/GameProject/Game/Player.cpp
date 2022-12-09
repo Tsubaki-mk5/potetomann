@@ -1,11 +1,8 @@
 #include "Player.h"
 #include "Bullet.h"
-<<<<<<< HEAD
 #include"Gauge.h"
-=======
 #include"Effect.h"
 
->>>>>>> 4dd5dc1f89d0fa39714645f2a9fd1f5e265d331a
 Player::Player(const CVector2D& pos) : Base(eType_Player)
 {
 	m_img.Load("Image/Player.png");
@@ -14,16 +11,13 @@ Player::Player(const CVector2D& pos) : Base(eType_Player)
 	m_img.SetSize(32, 32);
 	m_img.SetCenter(16, 16);
 	m_count = 0;
-<<<<<<< HEAD
 	Base::Add(m_gauge = new Gauge(0));
 	m_hp = m_max_hp = 1000;
 }
 Player::~Player(){
 	if (m_gauge)
 		m_gauge->SetKill();
-=======
 	kaiten = false;
->>>>>>> 4dd5dc1f89d0fa39714645f2a9fd1f5e265d331a
 }
 void Player::Update()
 {
