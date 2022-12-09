@@ -6,12 +6,13 @@
 #include "Game/Enemy.h"
 #include "Game/Bullet.h"
 #include <list>
-#include "game/UI.h"
+#include "Game/UI.h"
 #include "Game/Field.h"
 #include "Game/Gimmick.h"
 #include "Game/Boss.h"
 #include "Title/Title.h"
 #include "Game/Bossbullet.h"
+#include"Game/Gauge.h"
 //--------------------------------------------
 //ÉOÉçÅ[ÉoÉãïœêîóÃàÊ
 //--------------------------------------------
@@ -86,8 +87,10 @@ void Init(void)
 	ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));
 	ADD_RESOURCE("Gameover", CImage::CreateImage("Image/Gameover.png"));
 	ADD_RESOURCE("Bossbullet", CImage::CreateImage("Image/Bossbullet.png"));
+	ADD_RESOURCE("Gauge", CImage::CreateImage("Image/Gauge.png"));
 	Base::Add(new Field());
 	Base::Add(new Title());
+
 }
 
 

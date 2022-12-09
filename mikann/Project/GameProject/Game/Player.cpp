@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Bullet.h"
+#include"Gauge.h"
 Player::Player(const CVector2D& pos) : Base(eType_Player)
 {
 	m_img.Load("Image/Player.png");
@@ -8,6 +9,12 @@ Player::Player(const CVector2D& pos) : Base(eType_Player)
 	m_img.SetSize(32, 32);
 	m_img.SetCenter(16, 16);
 	m_count = 0;
+	Base::Add(m_gauge = new Gauge(0));
+	m_hp = m_max_hp = 1000;
+}
+Player::~Player(){
+	if (m_gauge)
+		m_gauge->SetKill();
 }
 void Player::Update()
 {
@@ -24,10 +31,12 @@ void Player::Update()
 		m_ang = 8;
 		*/
 	if (PUSH(CInput::eButton1)) {
-		
+
 		Base::Add(new Bullet(CVector2D(m_pos)));
+		m_scroll.y = m_pos.y - 600;
 	}
-	
+	m_gauge->SetValue((float)m_hp / m_max_hp);
+	m_gauge->m_pos = CVector2D(0, 0);
 
 }
 
@@ -37,4 +46,8 @@ void Player::Draw()
 	//m_img.SetAng(m_ang);
 	m_img.Draw();
 	DrawRect();
+}
+
+void Player::Collision(Base* b)
+{
 }
