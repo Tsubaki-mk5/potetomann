@@ -80,6 +80,7 @@ void Init(void)
 	ADD_RESOURCE("Gameover", CImage::CreateImage("Image/Gameover.png"));
 	ADD_RESOURCE("Bossbullet", CImage::CreateImage("Image/Bossbullet.png"));
 	ADD_RESOURCE("BossWaza", CImage::CreateImage("Image/hono.png"));
+	ADD_RESOURCE("Gauge", CImage::CreateImage("Image/Gauge.png"));
 	Base::Add(new Field());
 	Base::Add(new Title());
 }
