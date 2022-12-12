@@ -56,6 +56,12 @@
     <ClCompile Include="Game\BossWaza.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Game02.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Boss02.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -121,6 +127,12 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\BossWaza.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Game02.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Boss02.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>

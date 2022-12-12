@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
     <ClCompile Include="Game\Boss.cpp" />
+    <ClCompile Include="Game\Boss02.cpp" />
     <ClCompile Include="Game\Bossbullet.cpp" />
     <ClCompile Include="Game\BossWaza.cpp" />
     <ClCompile Include="Game\Bullet.cpp" />
@@ -20,6 +21,7 @@
     <ClCompile Include="Game\Enemy.cpp" />
     <ClCompile Include="Game\Field.cpp" />
     <ClCompile Include="Game\Game.cpp" />
+    <ClCompile Include="Game\Game02.cpp" />
     <ClCompile Include="Game\Gameclear.cpp" />
     <ClCompile Include="Game\GameData.cpp" />
     <ClCompile Include="Game\Gameover.cpp" />
@@ -34,6 +36,7 @@
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
     <ClInclude Include="Game\Boss.h" />
+    <ClInclude Include="Game\Boss02.h" />
     <ClInclude Include="Game\Bossbullet.h" />
     <ClInclude Include="Game\BossWaza.h" />
     <ClInclude Include="Game\Bullet.h" />
@@ -41,6 +44,7 @@
     <ClInclude Include="Game\Enemy.h" />
     <ClInclude Include="Game\Field.h" />
     <ClInclude Include="Game\Game.h" />
+    <ClInclude Include="Game\Game02.h" />
     <ClInclude Include="Game\Gameclear.h" />
     <ClInclude Include="Game\GameData.h" />
     <ClInclude Include="Game\Gameover.h" />
