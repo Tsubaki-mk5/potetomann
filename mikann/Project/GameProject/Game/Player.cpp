@@ -64,6 +64,7 @@ void Player::Collision(Base* b)
 	switch (b->m_type) {
 	case eType_Enemy:
 	case eType_Boss_bullet:
+	case eType_Boss_bullet03:
 	{
 			if (Base::CollisionCircle(this, b))
 			{

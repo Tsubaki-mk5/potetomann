@@ -1,10 +1,10 @@
-#include "Boss02.h"
+#include "Boss03.h"
 #include "Effect.h"
-#include "Bossbullet.h"
+#include "Bossbullet03.h"
 #include "BossWaza.h"
-Boss02::Boss02(const CVector2D & pos) : Base(eType_Boss)
+Boss03::Boss03(const CVector2D & pos) : Base(eType_Boss)
 {
-	m_img.Load("Image/Boss.png");
+	m_img.Load("Image/boss03.png");
 	m_pos = pos;
 	m_rad = 50;
 	m_img.SetSize(220, 220);
@@ -12,7 +12,7 @@ Boss02::Boss02(const CVector2D & pos) : Base(eType_Boss)
 	movedir = -1;
 	m_hp = 500;
 }
-void Boss02::Update()
+void Boss03::Update()
 {
 	m_cnt++;
 	Base* b = Base::FindObject(eType_Player);
@@ -20,7 +20,7 @@ void Boss02::Update()
 		CVector2D vec = b->m_pos - m_pos;
 		m_ang = atan2(vec.x, vec.y);
 		if (m_cnt >= 50) {
-			Base::Add(new Bossbullet(eType_Boss_bullet, m_pos, m_ang, 4));
+			Base::Add(new Bossbullet03(eType_Boss_bullet03, m_pos, m_ang, 4));
 			m_cnt = 0;
 		}
 	}
@@ -48,14 +48,14 @@ void Boss02::Update()
 
 }
 
-void Boss02::Draw()
+void Boss03::Draw()
 {
 	m_img.SetPos(m_pos);
 	m_img.SetAng(m_ang);
 	m_img.Draw();
 }
 
-void Boss02::Collision(Base* b)
+void Boss03::Collision(Base* b)
 {
 	switch (b->m_type) {
 	case   eType_Bullet:
