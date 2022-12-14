@@ -14,6 +14,7 @@ Player::Player(const CVector2D& pos) : Base(eType_Player)
 	m_count = 0;
 	Base::Add(m_gauge = new Gauge(0));
 	m_hp = m_max_hp = 1000;
+	hama = 1;
 }
 Player::~Player(){
 	if (m_gauge)
@@ -49,9 +50,10 @@ void Player::Update()
 		m_scroll.y = m_pos.y - 600;
 	}
 
-	if (PUSH(CInput::eButton5)) {
-
+	if (PUSH(CInput::eButton5)&& hama ==1) {
+		hama = 0;
 		Base::Add(new Hittsatu(CVector2D(m_pos)));
+
 	}
 	m_gauge->SetValue((float)m_hp / m_max_hp);
 	m_gauge->m_pos = CVector2D(0, 0);

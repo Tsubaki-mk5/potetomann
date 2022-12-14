@@ -10,6 +10,8 @@ public:
 	int movedir;
 	int m_max_hp;
 	Gauge* m_gauge;
+	int hama;
+
 public:
 	Player(const CVector2D& pos);
 	~Player();

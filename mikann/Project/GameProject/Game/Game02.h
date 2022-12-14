@@ -1,0 +1,14 @@
+#pragma once
+#include "../Base/Base.h"
+
+
+class Game02 : public Base {
+public:
+	int k = 0;
+
+
+
+	Game02();
+	~Game02();
+	void Update();
+};
