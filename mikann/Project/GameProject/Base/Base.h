@@ -9,6 +9,7 @@ enum {
 	eType_Player,
 	eType_Enemy_Attack,
 	eType_Boss_bullet,
+	eType_Boss_bullet03,
 	eType_Bullet,
 	eType_Hittsatu,
 	eType_Sword,
@@ -17,6 +18,7 @@ enum {
 	eType_Effect,
 	eType_Gimmick,
 	eType_Bossbullet,
+	eType_Bossbullet03,
 	eType_Scene,
 	eType_Gauge
 };

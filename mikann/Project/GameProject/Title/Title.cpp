@@ -1,6 +1,7 @@
 #include "Title.h"
 #include "../Game/Game.h"
 #include "../Game/Game02.h"
+#include "../Game/Game03.h"
 
 
 Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 50), m_menu_text("C:\\Windows\\Fonts\\msgothic.ttc", 50), m_member_text("C:\\Windows\\Fonts\\msgothic.ttc", 40) {
@@ -19,7 +20,10 @@ Title::~Title() {
 		//ゲームシーンへ
 		Base::Add(new Game02());
 	}
-	
+	if (HOLD(CInput::eButton3)) {//Cキー
+		//ゲームシーンへ
+		Base::Add(new Game03());
+	}
 }
 
 void Title::Update() {
