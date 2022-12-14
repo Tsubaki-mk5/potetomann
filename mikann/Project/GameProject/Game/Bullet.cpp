@@ -32,7 +32,7 @@ void Bullet::Collision(Base* b)
 		if (Base::CollisionCircle(this, b))
 		{
 			
-			
+	
 			Base::Add(new Effect(b->m_pos));
 			GameData::s_score += 100;
 		}

@@ -1,11 +1,11 @@
 #include "Gimmick.h"
 #include "../Base/Base.h"
 #include "Effect.h"
+#include "Boss.h"
 //重力加速度
 #define GRAVITY	(1.0f/70)
 
 Gimmick::Gimmick(const CVector2D& pos) : Base(eType_Gimmick) {
-	
 	
 	m_pos = pos;
 	m_img0.Load("Image/Inseki.png");
@@ -13,13 +13,8 @@ Gimmick::Gimmick(const CVector2D& pos) : Base(eType_Gimmick) {
 	m_img0.SetCenter(100, 170);
 	m_rad = 35;
 	int cnt = 0;
-
-	while (cnt <= 10) {
-		ADD_RESOURCE("Inseki", CImage::CreateImage("Image/Inseki.png"));
-		cnt += 1;
-	}
-	return;
-
+//ボスが倒されるまでランダムに隕石を降らしたい/
+	
 
 	
 	//m_img1.Load("Image/Akikann.png"); 
@@ -52,6 +47,7 @@ void Gimmick::Collision(Base* b)
 		{
 			b->SetKill();
 			SetKill();
+			SOUND("SE_Hit.wav")->Play();
 			Base::Add(new Effect(b->m_pos));
 			break;
 		}

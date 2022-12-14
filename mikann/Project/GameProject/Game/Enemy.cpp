@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "Effect.h"
+#include "../Base/Base.h"
 Enemy::Enemy(const CVector2D& pos):Base(eType_Enemy)
 {
 	m_img.Load("Image/tako.png");
