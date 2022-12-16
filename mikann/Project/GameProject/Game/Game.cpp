@@ -21,7 +21,7 @@ Game::Game() :Base(eType_Scene) {
 	
 	
 	srand(time(NULL));
-	Base::Add(new Gimmick(CVector2D(rand() % 720, 300)));
+	Base::Add(new Gimmick(CVector2D(rand() % 720, 0)));
 	
 }
 
@@ -49,7 +49,18 @@ void Game::Update() {
 		SetKill();
 		k = 1;
 	}
-
+	//ボスが存在するなら
+	if (Base::FindObject(eType_Boss)) {
+		//時間経過
+		gimmik_cnt++;
+		//120f以上なら
+		if (gimmik_cnt >= 120) {
+			//隕石を生成
+			Base::Add(new Gimmick(CVector2D(rand() % 720, 0)));
+			//タイマーリセット
+			gimmik_cnt = 0;
+		}
+	}
 	//敵全滅　ボタン１でゲームシーン終了
 	if (!Base::FindObject( eType_Boss ) && PUSH(CInput::eButton2))
  {
