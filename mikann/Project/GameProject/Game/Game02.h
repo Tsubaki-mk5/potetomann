@@ -5,6 +5,7 @@
 class Game02 : public Base {
 public:
 	int k = 0;
+	int gimmik_cnt = 0;
 
 
 

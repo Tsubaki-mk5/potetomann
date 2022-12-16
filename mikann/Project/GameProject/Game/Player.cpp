@@ -51,6 +51,7 @@ void Player::Update()
 	}
 
 	if (PUSH(CInput::eButton5)&& hama ==1) {
+		SOUND("SE_Tin2")->Play();
 		hama = 0;
 		Base::Add(new Hittsatu(CVector2D(m_pos)));
 

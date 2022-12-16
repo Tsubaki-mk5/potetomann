@@ -88,6 +88,7 @@ void Init(void)
 	SOUND("BGM_Sentou1")->Load("Sound/BGM/BGM_Sentou1.wav",1);
 	SOUND("BGM_Sentou1")->Play(true);
 	SOUND("SE_Tin")->Load("Sound/SE/SE_Tin.wav");
+	SOUND("SE_Tin2")->Load("Sound/SE/SE_Tin2.wav");
 	
 }
 

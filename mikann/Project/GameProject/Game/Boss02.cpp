@@ -4,7 +4,7 @@
 #include "BossWaza.h"
 Boss02::Boss02(const CVector2D & pos) : Base(eType_Boss)
 {
-	m_img.Load("Image/Boss.png");
+	m_img.Load("Image/Boss02.png");
 	m_pos = pos;
 	m_rad = 50;
 	m_img.SetSize(220, 220);

@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Game02.h"
 #include "Player.h"
 #include "Enemy.h"
 #include "../Title/Title.h"
@@ -30,7 +31,7 @@ Game::~Game() {
 	case 0:
 		//全てのオブジェクトを破棄
 		Base::KillAll();
-		Base::Add(new Gameclear());
+		Base::Add(new Game02());
 		
 		break;
 	case 1:
