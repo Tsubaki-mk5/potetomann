@@ -54,7 +54,7 @@ void Game::Update() {
 		//時間経過
 		gimmik_cnt++;
 		//120f以上なら
-		if (gimmik_cnt >= 120) {
+		if (gimmik_cnt >= 180) {
 			//隕石を生成
 			Base::Add(new Gimmick(CVector2D(rand() % 720, 0)));
 			//タイマーリセット
