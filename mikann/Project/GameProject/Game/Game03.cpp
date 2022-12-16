@@ -1,4 +1,5 @@
 #include "Game03.h"
+#include "Enemy03.h"
 #include "Player.h"
 #include "Enemy.h"
 #include "Boss03.h"
@@ -13,10 +14,10 @@
 Game03::Game03() :Base(eType_Scene) {
 	Base::Add(new Field());
 	Base::Add(new Player(CVector2D(200, 800)));
-	Base::Add(new Enemy(CVector2D(200, 200)));
-	Base::Add(new Enemy(CVector2D(300, 200)));
-	Base::Add(new Enemy(CVector2D(400, 200)));
-	Base::Add(new Enemy(CVector2D(500, 200)));
+	Base::Add(new Enemy03(CVector2D(200, 200)));
+	Base::Add(new Enemy03(CVector2D(300, 200)));
+	Base::Add(new Enemy03(CVector2D(400, 200)));
+	Base::Add(new Enemy03(CVector2D(500, 200)));
 	Base::Add(new Boss03(CVector2D(400, 200)));
 	Base::Add(new UI());
 
