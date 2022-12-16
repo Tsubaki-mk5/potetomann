@@ -45,7 +45,7 @@ void Player::Update()
 	}
 		
 	if (PUSH(CInput::eButton1)) {
-
+		SOUND("SE_Tin")->Play();
 		Base::Add(new Bullet(CVector2D(m_pos)));
 		m_scroll.y = m_pos.y - 600;
 	}
