@@ -11,6 +11,7 @@ Bossbullet::Bossbullet(int type, const CVector2D& pos, float ang, float speed):B
 	m_img.SetSize(30, 30);
 	m_speed = speed;
 	m_img.SetCenter(16, 16);
+	m_speed = 8;
 }
 
 void Bossbullet::Update()

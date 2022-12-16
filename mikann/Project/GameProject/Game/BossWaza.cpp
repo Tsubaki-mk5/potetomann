@@ -5,9 +5,11 @@ BossWaza::BossWaza(int type, const CVector2D& pos, float ang, float speed) : Bas
 		m_img = COPY_RESOURCE("BossWaza", CImage);
 	m_pos = pos;
 	m_ang = ang;
-	m_img.SetSize(30, 30);
+	m_img.SetSize(300, 300);
 	m_speed = speed;
-	m_img.SetCenter(16, 16);
+	m_img.SetCenter(150, 150);
+	m_rad = 150;
+	m_cnt;
 }
 
 void BossWaza::Update()

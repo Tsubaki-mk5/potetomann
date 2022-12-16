@@ -25,7 +25,7 @@ void Enemy::Update()
 		m_pos.y += move_speed;
 		m_cnt = 0;
 	}
-	}
+}
 	
 
 void Enemy::Draw()

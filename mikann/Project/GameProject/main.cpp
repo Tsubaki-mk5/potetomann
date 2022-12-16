@@ -74,7 +74,7 @@ void Init(void)
 	//‰Šú‰»‚Ì–½—ß‚ğ‘‚­
 	//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ŒÄ‚Î‚ê‚é
 	//-----------------------------------------------------
-	ADD_RESOURCE("Space", CImage::CreateImage("Image/Space.png"));
+	ADD_RESOURCE("Space", CImage::CreateImage("Image/space1.png"));
 	//ADD_RESOURCE("Akikann", CImage::CreateImage("Image/Akikann.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));

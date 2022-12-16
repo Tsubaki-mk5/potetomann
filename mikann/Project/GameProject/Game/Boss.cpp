@@ -14,38 +14,34 @@ Boss::Boss(const CVector2D& pos) : Base(eType_Boss)
 }
 void Boss::Update()
 {
-	m_cnt++;
-	Base* b = Base::FindObject(eType_Player);
-		if(b) {
-			CVector2D vec = b->m_pos - m_pos;
-			m_ang = atan2(vec.x, vec.y);
-			if (m_cnt >= 50) {
-				Base::Add(new Bossbullet(eType_Boss_bullet, m_pos, m_ang, 4));
-				m_cnt = 0;
-			}
-		}
-		if (b) {
-			CVector2D vec = b->m_pos - m_pos;
-			m_ang = atan2(vec.x, vec.y);
-			if (m_cnt >= 100) {
-				Base::Add(new BossWaza(eType_BossWaza, m_pos, m_ang, 4));
-				m_cnt = 0;
-			}
-		}
 	if (movedir == 1) {
-		m_pos.x += 4;
-		if (m_pos.x > 650) {
+		m_pos.x += 10;
+		if (m_pos.x > 1000) {
 			movedir = -1;
 		}
 	}
 	else {
-		m_pos.x -= 4;
+		m_pos.x -= 10;
 		if (m_pos.x < 50) {
 			movedir = 1;
 		}
 	}
-	   
-		
+	m_cnt++;
+	const float move_speed = 0;
+	Base* player = Base::FindObject(eType_Player);
+	if (player) {
+		CVector2D vec = player->m_pos - m_pos;
+		m_ang = atan2(vec.x, vec.y);
+		if (m_cnt >= 50) {
+			Base::Add(new Bossbullet(eType_Boss_bullet, m_pos, m_ang, 4));
+			m_cnt = 0;
+		}
+		m_ang = atan2(vec.x, vec.y);
+		if (m_cnt >= 100) {
+			Base::Add(new BossWaza(eType_BossWaza, m_pos, m_ang, 4));
+			m_cnt = 0;
+		}
+	}
 }
 
 void Boss::Draw()
