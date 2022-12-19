@@ -26,15 +26,15 @@ Player::~Player(){
 void Player::Update()
 {
 	const int move_speed = 5;
-	if (HOLD(CInput::eRight))
+	if (HOLD(CInput::eButton4))
 		m_pos.x += move_speed;
-	if (HOLD(CInput::eUp))
+	if (HOLD(CInput::eButton1))
 		m_pos.y -= move_speed;
-	if (HOLD(CInput::eDown))
+	if (HOLD(CInput::eButton3))
 		m_pos.y += move_speed;
-	if (HOLD(CInput::eLeft))
+	if (HOLD(CInput::eButton2))
 		m_pos.x -= move_speed;
-	if (PUSH(CInput::eButton4))
+	if (PUSH(CInput::eMouseR))
 		kaiten = true;
 	if (kaiten) {
 		m_ang += DtoR(10);
@@ -44,7 +44,7 @@ void Player::Update()
 		}
 	}
 		
-	if (PUSH(CInput::eButton1)) {
+	if (PUSH(CInput::eMouseL)) {
 		SOUND("SE_Tin")->Play();
 		Base::Add(new Bullet(CVector2D(m_pos)));
 		m_scroll.y = m_pos.y - 600;

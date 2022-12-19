@@ -11,19 +11,13 @@ Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.tt
 Title::~Title() {
 	//全てのオブジェクトを破棄
 	Base::KillAll();
-	if (HOLD(CInput::eButton1)) {//Zキー
+	if (HOLD(CInput::eButton1)) {//Wキー
 		//SOUND("titleBGM")->Stop();
 		//ゲームシーンへ
 		Base::Add(new Game());
 	}
-	if (HOLD(CInput::eButton2)) {//Xキー
-		//ゲームシーンへ
-		Base::Add(new Game02());
-	}
-	if (HOLD(CInput::eButton3)) {//Cキー
-		//ゲームシーンへ
-		Base::Add(new Game03());
-	}
+	
+	
 }
 
 void Title::Update() {
