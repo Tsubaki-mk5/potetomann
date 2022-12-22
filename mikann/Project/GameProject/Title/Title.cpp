@@ -46,6 +46,6 @@ void Title::Draw() {
 
 	m_img.Draw();
 
-	m_title_text.Draw(100, 200, 255, 255, 0, "Universeinvestigation");
+	
 	
 }
