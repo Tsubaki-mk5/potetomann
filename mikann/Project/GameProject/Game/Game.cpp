@@ -52,9 +52,9 @@ void Game::Update() {
 		//時間経過
 		gimmik_cnt++;
 		//120f以上なら
-		if (gimmik_cnt >= 180) {
+		if (gimmik_cnt >= 60) {
 			//隕石を生成
-			Base::Add(new Gimmick(CVector2D(rand() % 720, 0)));
+			Base::Add(new Gimmick(CVector2D(rand() % 1280, 0)));
 			//タイマーリセット
 			gimmik_cnt = 0;
 		}
@@ -62,8 +62,8 @@ void Game::Update() {
 			//時間経過
 			enemy_cnt++;
 			//120f以上なら
-			if (enemy_cnt >= 240) {
-				Base::Add(new Enemy(CVector2D(rand() % 720, 0)));
+			if (enemy_cnt >= 60) {
+				Base::Add(new Enemy(CVector2D(rand() % 1280, 0)));
 				//タイマーリセット
 				enemy_cnt = 0;
 			}
