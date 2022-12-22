@@ -1,7 +1,7 @@
 //ゲーム係機能のインクルード
 #include <GLLibrary.h>
-#define SCREEN_WIDTH 720
-#define SCREEN_HEIGHT 960
+#define SCREEN_WIDTH 1980
+#define SCREEN_HEIGHT 1180
 #include "Game/Player.h"
 #include "Game/Enemy.h"
 #include "Game/Bullet.h"
