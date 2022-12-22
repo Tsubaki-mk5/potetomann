@@ -11,25 +11,21 @@ Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.tt
 Title::~Title() {
 	//全てのオブジェクトを破棄
 	Base::KillAll();
-	if (HOLD(CInput::eButton1)) {//Zキー
+	if (HOLD(CInput::eButton10)) {//Wキー
 		//SOUND("titleBGM")->Stop();
 		//ゲームシーンへ
-		Base::Add(new Game());
+	Base::Add(new Game());
+	
+
 	}
-	if (HOLD(CInput::eButton2)) {//Xキー
-		//ゲームシーンへ
-		Base::Add(new Game02());
-	}
-	if (HOLD(CInput::eButton3)) {//Cキー
-		//ゲームシーンへ
-		Base::Add(new Game03());
-	}
+	
+	
 }
 
 void Title::Update() {
 
 	//ボタン１でタイトル破棄
-	if (PUSH(CInput::eButton1)) {
+	if (PUSH(CInput::eButton10)) {
 		SetKill();
 	}
 	if (PUSH(CInput::eButton2)) {
@@ -51,4 +47,5 @@ void Title::Draw() {
 	m_img.Draw();
 
 	m_title_text.Draw(100, 200, 255, 255, 0, "Universeinvestigation");
+	
 }

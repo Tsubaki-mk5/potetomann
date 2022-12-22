@@ -47,13 +47,13 @@ Game03::~Game03() {
 
 void Game03::Update() {
 	//プレイヤー死亡　ボタン１でゲームシーン終了
-	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
+	if (!Base::FindObject(eType_Player)) {
 		SetKill();
 		k = 1;
 	}
 
 	//敵全滅　ボタン１でゲームシーン終了
-	if (!Base::FindObject(eType_Boss) && PUSH(CInput::eButton2))
+	if (!Base::FindObject(eType_Boss))
 	{
 		Base::KillAll();
 		SetKill();

@@ -24,6 +24,6 @@ void Gameover::Update() {
 
 void Gameover::Draw() {
 	m_img.Draw();
-	m_title_text.Draw(156, 50, 255, 255, 0, "Gameover");
+	
 
 }
