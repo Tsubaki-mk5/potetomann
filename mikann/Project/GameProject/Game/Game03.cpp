@@ -5,7 +5,7 @@
 #include "Boss03.h"
 #include "../Title/Title.h"
 #include "Field.h"
-#include "Gimmick.h"
+#include "Gimmick03.h"
 #include "UI.h"
 #include "GameData.h"
 #include "Gameclear.h"
@@ -23,7 +23,7 @@ Game03::Game03() :Base(eType_Scene) {
 
 
 	srand(time(NULL));
-	Base::Add(new Gimmick(CVector2D(rand() % 720, 300)));
+	Base::Add(new Gimmick03(CVector2D(rand() % 720, 300)));
 
 }
 
@@ -51,7 +51,15 @@ void Game03::Update() {
 		SetKill();
 		k = 1;
 	}
-
+	if (Base::FindObject(eType_Boss)) {
+		//時間経過
+		gimmik_cnt++;
+		if (gimmik_cnt >= 15) {
+			Base::Add(new Gimmick03(CVector2D(rand() % 1280, 0)));
+			//タイマーリセット
+			gimmik_cnt = 0;
+		}
+	}
 	//敵全滅　ボタン１でゲームシーン終了
 	if (!Base::FindObject(eType_Boss))
 	{

@@ -5,11 +5,11 @@
 #include "Enemy02.h"
 #include "../Title/Title.h"
 #include "Field.h"
-#include "Gimmick.h"
 #include "UI.h"
 #include "GameData.h"
 #include "Gameclear.h"
 #include "Gameover.h"
+#include "Gimmick02.h"
 
 Game02::Game02() :Base(eType_Scene) {
 	Base::Add(new Field());
@@ -23,7 +23,7 @@ Game02::Game02() :Base(eType_Scene) {
 
 
 	srand(time(NULL));
-	Base::Add(new Gimmick(CVector2D(rand() % 720, 300)));
+	Base::Add(new Gimmick02(CVector2D(rand() % 1280, 0)));
 
 }
 
@@ -45,13 +45,22 @@ Game02::~Game02() {
 }
 
 
+
 void Game02::Update() {
 	//プレイヤー死亡　ボタン１でゲームシーン終了
 	if (!Base::FindObject(eType_Player)) {
 		SetKill();
 		k = 1;
 	}
-
+	if (Base::FindObject(eType_Boss)) {
+		//時間経過
+		gimmik_cnt++;
+		if (gimmik_cnt >= 30) {
+			Base::Add(new Gimmick02(CVector2D(rand() % 1280, 0)));
+			//タイマーリセット
+			gimmik_cnt = 0;
+		}
+	}
 	//敵全滅　ボタン１でゲームシーン終了
 	if (!Base::FindObject(eType_Boss))
 	{

@@ -17,6 +17,8 @@ enum {
 	eType_BossWaza,
 	eType_Effect,
 	eType_Gimmick,
+	eType_Gimmick02,
+	eType_Gimmick03,
 	eType_Bossbullet,
 	eType_Bossbullet03,
 	eType_Scene,
