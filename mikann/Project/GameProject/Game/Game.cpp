@@ -29,7 +29,7 @@ Game::~Game() {
 	case 0:
 		//全てのオブジェクトを破棄
 		Base::KillAll();
-		Base::Add(new Game02());
+		Base::Add(new Gameclear());
 		
 		break;
 	case 1:
