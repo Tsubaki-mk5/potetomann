@@ -10,7 +10,7 @@ Boss03::Boss03(const CVector2D & pos) : Base(eType_Boss)
 	m_img.SetSize(220, 220);
 	m_img.SetCenter(110, 110);
 	movedir = -1;
-	m_hp = 500;
+	m_hp = 1500;
 }
 void Boss03::Update()
 {
@@ -24,7 +24,18 @@ void Boss03::Update()
 			m_cnt = 0;
 		}
 	}
-	
+	if (movedir == 1) {
+		m_pos.x += 3000;
+		if (m_pos.x > 1080) {
+			movedir = -1;
+		}
+	}
+	else {
+		m_pos.x -= 10;
+		if (m_pos.x < 50) {
+			movedir = 1;
+		}
+	}
 }
 
 void Boss03::Draw()

@@ -10,7 +10,7 @@ Boss02::Boss02(const CVector2D & pos) : Base(eType_Boss)
 	m_img.SetSize(220, 220);
 	m_img.SetCenter(110, 110);
 	movedir = -1;
-	m_hp = 500;
+	m_hp = 1000;
 }
 void Boss02::Update()
 {
