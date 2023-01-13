@@ -52,12 +52,10 @@ void Game03::Update() {
 		gimmik_cnt++;
 		if (gimmik_cnt >= 40) {
 			Base::Add(new Gimmick03(CVector2D(rand() % 1280, 0)));
-			Base::Add(new Gimmick03(CVector2D(rand() % 1280, 0)));
 			//タイマーリセット
 			gimmik_cnt = 0;
-			
-			
 		}
+		
 		if (Base::FindObject(eType_Boss)) {
 			//時間経過
 			enemy3_cnt++;
@@ -69,6 +67,15 @@ void Game03::Update() {
 			}
 		}
 	}
+		if (Base::FindObject(eType_Boss)) {
+			//時間経過
+			gimmik_cnt++;
+			if (gimmik_cnt >= 30) {
+				Base::Add(new Gimmick03(CVector2D(rand() % 1280, 0)));
+				//タイマーリセット
+				gimmik_cnt = 0;
+			}
+		}
 	//敵全滅　ボタン１でゲームシーン終了
 	if (!Base::FindObject(eType_Boss))
 	{
