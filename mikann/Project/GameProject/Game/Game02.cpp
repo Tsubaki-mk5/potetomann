@@ -14,10 +14,6 @@
 Game02::Game02() :Base(eType_Scene) {
 	Base::Add(new Field());
 	Base::Add(new Player(CVector2D(200, 800)));
-	Base::Add(new Enemy02(CVector2D(200, 200)));
-	Base::Add(new Enemy02(CVector2D(300, 200)));
-	Base::Add(new Enemy02(CVector2D(400, 200)));
-	Base::Add(new Enemy02(CVector2D(500, 200)));
 	Base::Add(new Boss02(CVector2D(400, 200)));
 	Base::Add(new UI());
 
@@ -60,6 +56,16 @@ void Game02::Update() {
 			Base::Add(new Gimmick02(CVector2D(rand() % 1280, 0)));
 			//タイマーリセット
 			gimmik_cnt = 0;
+		}
+		if (Base::FindObject(eType_Boss)) {
+			//時間経過
+			enemy2_cnt++;
+			//120f以上なら
+			if (enemy2_cnt >= 60) {
+				Base::Add(new Enemy02(CVector2D(rand() % 1280, 0)));
+				//タイマーリセット
+				enemy2_cnt = 0;
+			}
 		}
 	}
 	//敵全滅　ボタン１でゲームシーン終了

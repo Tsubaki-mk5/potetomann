@@ -8,10 +8,10 @@ Bossbullet03::Bossbullet03(int type, const CVector2D& pos, float ang, float spee
 		m_img = COPY_RESOURCE("Bossbullet03", CImage);
 	m_pos = pos;
 	m_ang = ang;
-	m_img.SetSize(80, 80);
+	m_img.SetSize(500,500);
 	m_speed = speed;
-	m_img.SetCenter(16, 16);
-	m_rad = 40;
+	m_img.SetCenter(200, 200);
+	m_rad = 200;
 }
 
 void Bossbullet03::Update()
@@ -35,5 +35,7 @@ void Bossbullet03::Collision(Base* b)
 			SetKill();
 
 		}
+	
 	}
+	
 }

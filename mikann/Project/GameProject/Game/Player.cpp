@@ -13,7 +13,7 @@ Player::Player(const CVector2D& pos) : Base(eType_Player)
 	m_img.SetCenter(16, 16);
 	m_count = 0;
 	Base::Add(m_gauge = new Gauge(0));
-	m_hp = m_max_hp = 1000;
+	m_hp = m_max_hp = 430;
 	hama = 1;
 }
 Player::~Player(){
@@ -64,30 +64,52 @@ void Player::Collision(Base* b)
 {
 	switch (b->m_type) {
 	case eType_Enemy:
-	case eType_Boss_bullet:
-	case eType_Boss_bullet03:
-	{
-			if (Base::CollisionCircle(this, b))
-			{
-				b->SetKill();
-				m_hp -= 20;
-				if (m_hp <= 0) {
-					SetKill();
-				}
-				Base::Add(new Effect(b->m_pos));
-
+		if (Base::CollisionCircle(this, b))
+		{
+			b->SetKill();
+			m_hp -= 25;
+			if (m_hp <= 0) {
+				SetKill();
 			}
+			Base::Add(new Effect(b->m_pos));
+
 		}
+	case eType_Boss_bullet:
+		if (Base::CollisionCircle(this, b))
+		{
+			b->SetKill();
+			m_hp -= 40;
+			if (m_hp <= 0) {
+				SetKill();
+			}
+			Base::Add(new Effect(b->m_pos));
+			break;
+		}
+
+	case eType_Boss_bullet03:
+	
+		if (Base::CollisionCircle(this, b))
+		{
+			b->SetKill();
+			m_hp -= 200;
+			if (m_hp <= 0) {
+				SetKill();
+			}
+			Base::Add(new Effect(b->m_pos));
+
+		}
+
 		CVector2D v = b->m_pos - m_pos;
 		float l = v.Length();
-			if (kaiten && l < b->m_rad + 64)
+		if (kaiten && l < b->m_rad + 64)
 		{
 			b->SetKill();
 			Base::Add(new Effect(b->m_pos));
 		}
-	
+
 		break;
 	}
+	
 }
 
 

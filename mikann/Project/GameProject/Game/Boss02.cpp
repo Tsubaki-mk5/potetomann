@@ -19,33 +19,35 @@ void Boss02::Update()
 	if (b) {
 		CVector2D vec = b->m_pos - m_pos;
 		m_ang = atan2(vec.x, vec.y);
-		if (m_cnt >= 50) {
+		if (m_cnt >= 8) {
 			Base::Add(new Bossbullet(eType_Boss_bullet, m_pos, m_ang, 4));
 			m_cnt = 0;
 		}
 	}
-	if (b) {
-		CVector2D vec = b->m_pos - m_pos;
-		m_ang = atan2(vec.x, vec.y);
-		if (m_cnt >= 100) {
-			Base::Add(new BossWaza(eType_BossWaza, m_pos, m_ang, 4));
-			m_cnt = 0;
-		}
-	}
 	if (movedir == 1) {
-		m_pos.x += 4;
-		if (m_pos.x > 650) {
+		m_pos.x += 10;
+		if (m_pos.x > 1080) {
 			movedir = -1;
 		}
 	}
 	else {
-		m_pos.x -= 4;
+		m_pos.x -= 10;
 		if (m_pos.x < 50) {
 			movedir = 1;
 		}
 	}
-
-
+	if (movedir == 1) {
+		m_pos.y += 10;
+		if (m_pos.y > 1080) {
+			movedir = -1;
+		}
+	}
+	else {
+		m_pos.y -= 10;
+		if (m_pos.y < 50) {
+			movedir = 1;
+		}
+	}
 }
 
 void Boss02::Draw()
