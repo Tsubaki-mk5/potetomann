@@ -20,7 +20,8 @@ Game02::Game02() :Base(eType_Scene) {
 
 	srand(time(NULL));
 	Base::Add(new Gimmick02(CVector2D(rand() % 1280, 0)));
-	
+	SOUND("af")->Stop();
+	SOUND("BGM_Sentou1")->Play(true);
 
 }
 

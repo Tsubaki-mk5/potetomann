@@ -9,6 +9,7 @@ Gameclear::Gameclear() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msg
 	SOUND("clear")->Play(true);
 	SOUND("BGM_Sentou1")->Stop();
 	SOUND("si")->Stop();
+	SOUND("af")->Stop();
 }
 
 Gameclear::~Gameclear() {

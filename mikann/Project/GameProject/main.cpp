@@ -85,12 +85,14 @@ void Init(void)
 	ADD_RESOURCE("Gauge", CImage::CreateImage("Image/Gauge.png"));
 	Base::Add(new Field());
 	Base::Add(new Title());
-	SOUND("BGM_Sentou1")->Load("Sound/BGM/BGM_Sentou1.wav",1);
-	SOUND("BGM_Sentou1")->Play(true);
+	SOUND("BGM_Sentou1")->Load("Sound/BGM/BGM_Sentou1.wav");
+	
 	SOUND("SE_Tin")->Load("Sound/SE/SE_Tin.wav");
 	SOUND("SE_Tin2")->Load("Sound/SE/SE_Tin2.wav");
 	SOUND("si")->Load("Sound/BGM/si.wav");
 	SOUND("clear")->Load("Sound/BGM/clear.wav");
+	SOUND("af")->Load("Sound/BGM/af.wav");
+	SOUND("af")->Play(true);
 	
 }
 

@@ -8,6 +8,7 @@ Gameover::Gameover() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgot
 	m_img.SetSize(1980, 1080);
 	SOUND("si")->Play(true);
 	SOUND("BGM_Sentou1")->Stop();
+	SOUND("af")->Stop();
 }
 
 Gameover::~Gameover() {
