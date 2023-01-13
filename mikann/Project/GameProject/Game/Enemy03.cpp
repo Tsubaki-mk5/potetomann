@@ -19,7 +19,7 @@ Enemy03::Enemy03(const CVector2D& pos) :Base(eType_Enemy)
 
 void Enemy03::Update()
 {
-	const int move_speed = 32;
+	const int move_speed = 70;
 	m_cnt++;
 	if (m_cnt >= 60) {
 		m_pos.y += move_speed;

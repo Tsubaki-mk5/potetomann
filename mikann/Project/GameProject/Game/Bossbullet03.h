@@ -4,6 +4,7 @@ class Bossbullet03 : public Base {
 public:
 	CImage m_img;
 	int type;
+	int m_hp;
 	float m_speed;
 	float ang;
 public:

@@ -6,6 +6,7 @@ class Game03 : public Base {
 public:
 	int k = 0;
 	int gimmik_cnt = 0;
+	int enemy3_cnt = 0;
 
 
 	Game03();
