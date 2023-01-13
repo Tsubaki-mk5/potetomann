@@ -27,7 +27,7 @@ void Gameover::Update() {
 
 void Gameover::Draw() {
 	m_img.Draw();
-	m_title_text.Draw(156, 870, 255, 255, 0, "Enterでタイトルに戻る");
+	//m_title_text.Draw(156, 870, 255, 255, 0, "Enterでタイトルに戻る");
 	
 
 }
