@@ -24,6 +24,7 @@ Game02::Game02() :Base(eType_Scene) {
 
 	srand(time(NULL));
 	Base::Add(new Gimmick02(CVector2D(rand() % 1280, 0)));
+	
 
 }
 

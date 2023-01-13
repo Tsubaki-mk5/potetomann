@@ -6,6 +6,8 @@
 Gameover::Gameover() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 	m_img = COPY_RESOURCE("Gameover", CImage);
 	m_img.SetSize(1980, 1080);
+	SOUND("si")->Play(true);
+	SOUND("BGM_Sentou1")->Stop();
 }
 
 Gameover::~Gameover() {
