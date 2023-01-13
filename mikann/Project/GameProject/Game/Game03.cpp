@@ -55,6 +55,9 @@ void Game03::Update() {
 			Base::Add(new Gimmick03(CVector2D(rand() % 1280, 0)));
 			//タイマーリセット
 			gimmik_cnt = 0;
+			if (eType_Gimmick03 > 1080) {
+				SetKill();
+			}
 		}
 		
 		if (Base::FindObject(eType_Boss)) {
@@ -65,6 +68,9 @@ void Game03::Update() {
 				Base::Add(new Enemy03(CVector2D(rand() % 1280, 0)));
 				//タイマーリセット
 				enemy3_cnt = 0;
+				if (eType_Enemy > 1080) {
+					SetKill();
+				}
 			}
 		}
 	}
@@ -75,6 +81,9 @@ void Game03::Update() {
 				Base::Add(new Gimmick03(CVector2D(rand() % 1280, 0)));
 				//タイマーリセット
 				gimmik_cnt = 0;
+				if (eType_Gimmick03 > 1080) {
+					SetKill();
+				}
 			}
 		}
 	//敵全滅　ボタン１でゲームシーン終了
