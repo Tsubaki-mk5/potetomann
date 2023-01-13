@@ -25,25 +25,25 @@ void Boss02::Update()
 		}
 	}
 	if (movedir == 1) {
-		m_pos.x += 10;
+		m_pos.x += 15;
 		if (m_pos.x > 1080) {
 			movedir = -1;
 		}
 	}
 	else {
-		m_pos.x -= 10;
+		m_pos.x -= 15;
 		if (m_pos.x < 50) {
 			movedir = 1;
 		}
 	}
 	if (movedir == 1) {
-		m_pos.y += 10;
+		m_pos.y += 15;
 		if (m_pos.y > 1080) {
 			movedir = -1;
 		}
 	}
 	else {
-		m_pos.y -= 10;
+		m_pos.y -= 15;
 		if (m_pos.y < 50) {
 			movedir = 1;
 		}

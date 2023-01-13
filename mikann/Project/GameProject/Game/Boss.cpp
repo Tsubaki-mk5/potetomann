@@ -15,13 +15,13 @@ Boss::Boss(const CVector2D& pos) : Base(eType_Boss)
 void Boss::Update()
 {
 	if (movedir == 1) {
-		m_pos.x += 10;
+		m_pos.x += 20;
 		if (m_pos.x > 1080) {
 			movedir = -1;
 		}
 	}
 	else {
-		m_pos.x -= 10;
+		m_pos.x -= 20;
 		if (m_pos.x < 50) {
 			movedir = 1;
 		}
@@ -32,7 +32,7 @@ void Boss::Update()
 	if (b) {
 		CVector2D vec = b->m_pos - m_pos;
 		m_ang = atan2(vec.x, vec.y);
-		if (m_cnt >= 50) {
+		if (m_cnt >= 30) {
 			Base::Add(new Bossbullet(eType_Boss_bullet, m_pos, m_ang, 4));
 			m_cnt = 0;
 		}
