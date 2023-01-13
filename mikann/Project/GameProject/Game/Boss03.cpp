@@ -24,18 +24,6 @@ void Boss03::Update()
 			m_cnt = 0;
 		}
 	}
-	if (movedir == 1) {
-		m_pos.y += 10;
-		if (m_pos.y > 500) {
-			movedir = -1;
-		}
-	}
-	if (movedir == 1) {
-		m_pos.x += 10;
-		if (m_pos.x > 500) {
-			movedir = -1;
-		}
-	}
 	
 }
 
