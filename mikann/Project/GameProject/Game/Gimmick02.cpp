@@ -21,7 +21,9 @@ void Gimmick02::Update()
 {
 	m_vec.y += GRAVITY;
 	m_pos += m_vec;
-
+	if (eType_Gimmick02 > 1080) {
+		SetKill();
+	}
 }
 
 void Gimmick02::Draw()

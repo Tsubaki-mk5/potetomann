@@ -24,7 +24,11 @@ void Enemy::Update()
 	if (m_cnt >= 60) {
 		m_pos.y += move_speed;
 		m_cnt = 0;
+		if (eType_Enemy > 1080) {
+			SetKill();
+		}
 	}
+	
 }
 	
 

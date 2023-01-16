@@ -55,9 +55,7 @@ void Game03::Update() {
 			Base::Add(new Gimmick03(CVector2D(rand() % 1280, 0)));
 			//タイマーリセット
 			gimmik_cnt = 0;
-			if (eType_Gimmick03 > 1080) {
-				SetKill();
-			}
+			
 		}
 		
 		if (Base::FindObject(eType_Boss)) {
