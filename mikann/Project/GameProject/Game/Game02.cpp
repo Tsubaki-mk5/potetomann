@@ -57,7 +57,9 @@ void Game02::Update() {
 			Base::Add(new Gimmick02(CVector2D(rand() % 1280, 0)));
 			//タイマーリセット
 			gimmik_cnt = 0;
-			
+			if (eType_Gimmick02 > 1080) {
+				SetKill();
+			}
 		}
 		if (Base::FindObject(eType_Boss)) {
 			//時間経過
@@ -81,7 +83,7 @@ void Game02::Update() {
 
 
 	}
-
+	
 
 
 }
